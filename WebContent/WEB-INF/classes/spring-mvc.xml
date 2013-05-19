@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"    
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/mvc  
+    	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<!-- 扫描包（用来扫描注解） -->
+    <context:component-scan base-package="com.xox"/>
+	
+	<!-- mvc拦截器  -->
+	<mvc:interceptors>   
+	   <!-- 拦截所有url -->
+	   <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
+	   <!-- 可配置多个 相当于test路径下的总拦截器 也可以配置对某个url下的拦截  注意只拦截/test/*这一层 在深入（/test/test/*）就不拦截了 
+	   <mvc:interceptor>    
+	        <mvc:mapping path="/test/*" /> 
+	        <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
+	   </mvc:interceptor>    -->  
+	</mvc:interceptors> 
+	<!-- 多视图配置 -->
+	<!-- FreeMarker环境配置 -->  
+	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">   
+       <property name="templateLoaderPath" value="/WEB-INF/ftl/" />   
+       <property name="freemarkerSettings">   
+           <props>   
+               <!-- 设置是否延迟 -->
+               <prop key="template_update_delay">0</prop>   
+               <prop key="default_encoding">UTF-8</prop>   
+               <prop key="locale">zh_CN</prop>   
+           </props>   
+       </property>   
+	</bean> 
+	<bean id="viewResolver" class="com.xox.common.core.MultiViewResover">  
+        <property name="resolvers">  
+            <map>  
+    			<!--jsp视图 -->
+    			<entry key="jsp">  
+				    <bean 
+				    	 class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+				        <property name="viewClass"  
+				         value="org.springframework.web.servlet.view.JstlView"/>  
+				        <property name="prefix" value="/WEB-INF/jsp/"/>  
+				        <property name="suffix" value=".jsp"/>  
+				    </bean> 
+				</entry> 
+				<!-- ftl视图 -->
+				<entry key="ftl"> 
+				    <bean 
+				        class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">  
+				        <property name="prefix" value="/"/>  
+				        <property name="suffix" value=".ftl"/> 
+				        <!-- 是否需要缓存 -->
+				        <property name="cache" value="true"/>  
+				        <!-- 解决中文乱码问题 -->
+				        <property name="contentType" value="text/html;charset=UTF-8"/>  
+				        <!-- 让spring对宏命令支持  -->    
+					    <property name="exposeSpringMacroHelpers" value="true"/>  
+					    <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>  
+					    <property name="requestContextAttribute" value="request"/> 
+				    </bean>  
+        		</entry>  
+            </map>  
+        </property>  
+    </bean>  
+	
+	<!-- 总错误处理-->  
+	<!-- 在IE【工具】->【Internet选项】->【高级】中去掉【显示友好http错误提示】；才能正常显示 -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">     
+          <property name="exceptionMappings">     
+              <props>     
+                  <prop key="java.lang.Exception">error/error</prop>     
+                  <prop key="java.lang.Throwable">error/error</prop>     
+              </props>     
+          </property>    
+          <!--   404 和 500配置了没用 因此 将404和500放到web.xml配置当静态资源处理不会被mvc拦截
+          <property name="statusCodes">     
+              <props>     
+                  <prop key="error/500">500</prop>     
+                  <prop key="error/404">404</prop>     
+             </props>     
+          </property>    
+         <property name="defaultStatusCode" value="500"></property>   
+         -->   
+         <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->     
+         <property name="warnLogCategory" value="WARN"></property>     
+         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->     
+         <property name="defaultErrorView" value="error/error"></property>     
+         <!-- 默认HTTP状态码 -->     
+   </bean>   
+</beans>
