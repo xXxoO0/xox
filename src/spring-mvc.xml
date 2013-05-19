@@ -11,20 +11,7 @@
     	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
-	
-	<!-- 扫描包（用来扫描注解） -->
-    <context:component-scan base-package="com.xox"/>
-	
-	<!-- mvc拦截器  -->
-	<mvc:interceptors>   
-	   <!-- 拦截所有url -->
-	   <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
-	   <!-- 可配置多个 相当于test路径下的总拦截器 也可以配置对某个url下的拦截  注意只拦截/test/*这一层 在深入（/test/test/*）就不拦截了 
-	   <mvc:interceptor>    
-	        <mvc:mapping path="/test/*" /> 
-	        <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
-	   </mvc:interceptor>    -->  
-	</mvc:interceptors> 
+        
 	<!-- 多视图配置 -->
 	<!-- FreeMarker环境配置 -->  
 	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">   
@@ -70,7 +57,22 @@
             </map>  
         </property>  
     </bean>  
-	
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射,解决@ResponseBody乱码问题, 需要在annotation-driven和component-scan之前,否则乱码问题同样无法解决 -->  
+    <!--Spring3.1推荐使用RequestMappingHandlerAdapter -->  
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  
+	    <property name="messageConverters">  
+	        <list>  
+	            <bean class="org.springframework.http.converter.StringHttpMessageConverter">  
+	                <property name="supportedMediaTypes">  
+	                    <list>  
+	                        <value>text/html;charset=UTF-8</value>  
+	                    </list>  
+	                </property>  
+	           </bean>  
+	       </list>  
+	    </property>  
+    </bean> 
+
 	<!-- 总错误处理-->  
 	<!-- 在IE【工具】->【Internet选项】->【高级】中去掉【显示友好http错误提示】；才能正常显示 -->
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">     
@@ -94,5 +96,27 @@
          <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->     
          <property name="defaultErrorView" value="error/error"></property>     
          <!-- 默认HTTP状态码 -->     
-   </bean>   
+   </bean>  
+   
+   <!-- 扫描包（用来扫描注解） -->
+    <context:component-scan base-package="com.xox"/>
+    
+   <!-- mvc拦截器  -->
+	<mvc:interceptors>   
+	   <!-- 拦截所有url 不配置 或者 /**
+	   方案1 <bean class="com.xox.common.intercept.TestInterceptor"></bean>     
+	   方案2 <mvc:interceptor>    
+	        <mvc:mapping path="/**" /> 
+	        <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
+	   </mvc:interceptor>    
+	   -->
+	   <!-- 可配置多个 相当于test路径下的总拦截器 也可以配置对某个url下的拦截  exclude-mapping是不拦截的url--> 
+	   <mvc:interceptor>    
+	        <mvc:mapping path="/test/**" /> 
+	        <mvc:exclude-mapping path="/test/ajax/**"/>
+	        <bean class="com.xox.common.intercept.TestInterceptor"></bean>    
+	   </mvc:interceptor>     
+	</mvc:interceptors> 
+	
+   <mvc:annotation-driven ></mvc:annotation-driven >
 </beans>
