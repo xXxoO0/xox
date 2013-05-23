@@ -38,14 +38,27 @@ function ajaxtest1(){
 }
 //jquery ajax例子
 function ajaxtest2(){
-	xoxForm("/test/ajax/test3","form1",function(data, textStatus){
+	ajaxForm("/test/ajax/test3","form1",function(data, textStatus){
 		alert(data);
 	});
 }
+//远程获取下拉框例子
 function ajaxtest3(){
-	
+	ajaxSelect("/test/ajax/test4",function(data){
+		var sel = $("#test");
+		var val = $("#test").val();
+		sel.empty();
+		$.each(data,function(i,s){
+			if(s.userName==val){
+				sel.append("<option value="+s.userName+" selected>"+s.password+"</option>")
+			}else{
+				sel.append("<option value="+s.userName+">"+s.password+"</option>")
+			}
+		});
+	});
 }
-
+	
+	
 </script>
 </head>
 <body>
@@ -57,5 +70,7 @@ function ajaxtest3(){
 <input type="password"  name="password"  value=""/>
 <input type="submit" value="提交" />
 </form>
+<button onclick="ajaxtest3()">点我测试json下拉框</button>
+<select id="test"></select>
 </body>
 </html>

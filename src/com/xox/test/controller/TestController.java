@@ -1,10 +1,14 @@
 package com.xox.test.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.util.JSONUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xox.common.utils.JosnUtil;
 import com.xox.test.entity.User;
 import com.xox.test.service.TestService;
 /**
@@ -125,5 +130,14 @@ public class TestController {
 		System.out.println(user.getUserName());
 		System.out.println(user.getPassword());
 		return "提交成功";
+	}
+	@RequestMapping(value = "/test/ajax/test4")
+	public void ajaxJsonSelect(HttpServletResponse response){
+		List<User> list = new ArrayList<User>();
+		list.add(new User("zw1","pwd1"));
+		list.add(new User("zw2","pwd2"));
+		list.add(new User("zw3","pwd3"));
+		list.add(new User("zw4","pwd4"));
+		JosnUtil.writeCollection(list, response);
 	}
 }

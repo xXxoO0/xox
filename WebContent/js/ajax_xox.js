@@ -90,7 +90,7 @@ var ajaxdefault = {
 		 * 以配合默认内容类型 "application/x-www-form-urlencoded"。
 		 * 如果要发送 DOM 树信息或其它不希望转换的信息，请设置为 false。
 		 */
-		processData:true, 
+		processData:true
 		/**
 		 * 请求成功后回调函数。这个方法有两个参数：服务器返回数据，返回状态
 		 * function (data, textStatus)...
@@ -105,23 +105,58 @@ function ajaxComplete(xmlhttp, textStatus){
 function ajaxError(xmlhttp, textStatus, errorThrown){
 	alert(textStatus+" : "+errorThrown);
 }
-//与jquery整合的ajax
+//引用jquery方法的ajax
 /**
  * 表单提交
- * formId 表单的id
- * sucFunc 成功的回调函数
+ * @param formId 表单的id
+ * @param sucFunc 成功的回调函数
+ * @param async 是否同步
  */
-function xoxForm(url,formId,sucFunc){
+function ajaxForm(url,formId,sucFunc,async){
 	var datas = $("#"+formId).serialize();
+	var asyncsetting = false;//表单提交一般用同步
+	//存在就取传入的值
+	if(async){
+		asyncsetting = async;
+	}
 	var xoxsettings = {
 			url:url,
 			data:datas,
 			success:sucFunc,
-			async:false,//表单提交一般用同步
+			async:asyncsetting
 	}
 	ajaxSumbit(xoxsettings);
 }
-
+/**
+ * 远程取select
+ * @param url
+ * @param sucFunc 成功的回调函数
+ * @param data 如果用post方式请传入值 默认get
+ * @param async是否同步
+ */
+function ajaxSelect(url,sucFunc,data,async){
+	var asyncsetting = false;//表单提交一般用同步
+	var methodsetting = "get";
+	var datasetting = {};
+	//存在就取传入的值
+	if(async){
+		asyncsetting = async;
+	}
+	//存在数据说明是post方式不存在是get方式直接写在路径里
+	if(data){
+		methodsetting = "post";
+		datasetting = data;
+	}
+	var xoxsettings = {
+			url:url,
+			method:methodsetting,
+			dataType:"json",
+			data:datasetting,
+			success:sucFunc,
+			async:asyncsetting
+	}
+	ajaxSumbit(xoxsettings);
+}
 
 /**
  * 最终调用的方法
