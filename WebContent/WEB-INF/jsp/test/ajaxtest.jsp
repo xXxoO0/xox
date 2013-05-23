@@ -44,6 +44,7 @@ function ajaxtest2(){
 }
 //远程获取下拉框例子
 function ajaxtest3(){
+	/*
 	ajaxSelect("/test/ajax/test4",function(data){
 		var sel = $("#test");
 		var val = $("#test").val();
@@ -56,6 +57,7 @@ function ajaxtest3(){
 			}
 		});
 	});
+	*/
 }
 	
 	

@@ -128,7 +128,7 @@ function ajaxForm(url,formId,sucFunc,async){
 	ajaxSumbit(xoxsettings);
 }
 /**
- * 远程取select
+ * 远程取select 以json形式接收数据 相当于$.getJSON
  * @param url
  * @param sucFunc 成功的回调函数
  * @param data 如果用post方式请传入值 默认get
@@ -157,6 +157,7 @@ function ajaxSelect(url,sucFunc,data,async){
 	}
 	ajaxSumbit(xoxsettings);
 }
+
 
 /**
  * 最终调用的方法

@@ -2,21 +2,17 @@ package com.xox.common.utils;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xox.test.entity.User;
-
-import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
+
+import com.xox.test.entity.User;
 
 /**
  * json处理工具类
@@ -78,18 +74,6 @@ public final class JosnUtil {
 	public static <T> List<T> jsonToArray(JSONArray jsonstr,Class<?> T){
 		return (List<T>) JSONArray.toCollection(jsonstr, T);
 	}
-	/**
-	 * 将客户端传过来的jsonArray转化成Map
-	 * @param jsonstr jsonArray对象
-	 * @param T javabean对象
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-//	public static <T> Map<String,T> jsonToArray(JSONArray jsonstr,Class T){
-//		List<String> prelist = (List<String>) JSONArray.toCollection(jsonstr);
-//		
-//	}
-
 	
 	public static void main(String[] args) {
 		Map<String,User> uMap = new HashMap<String,User>();
