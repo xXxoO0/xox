@@ -29,12 +29,6 @@ $(document).ready( function() {
    	'queueSizeLimit' : 3,//限制最多几个文件可选中
     'removeTimeout' : 1,//上传完成后文件行消失的时间延迟 默认3秒
     'fileSizeLimit' : '1MB'//单位可以是B KB MB GB
-    'itemTemplate' : '<div id="d" class="uploadify-queue-item">\
-					<div class="cancel">\
-						<a href="javascript:$(\'#upload_file\').uploadify(\'cancel\', \'d\')">X</a>\
-					</div>\
-					<span class="fileName">d (123)</span><span class="data"></span>\
-				</div>'//由于$跟freemarker冲突暂时无法解决
     <#--
     'overrideEvents' : ['onUploadProgress'],//重写覆盖原来的那些事件这里的例子是重写了更新进度条事件
     'preventCaching' : false,//默认是true 是否阻止缓存 默认阻止
@@ -79,7 +73,7 @@ $(document).ready( function() {
     });
   
 });
-http://hi.baidu.com/hilsl88/item/f8714914a52f6840e75e06ba
+//http://hi.baidu.com/hilsl88/item/f8714914a52f6840e75e06ba
 </script>
 </head>
 
