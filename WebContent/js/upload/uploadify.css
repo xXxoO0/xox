@@ -2,11 +2,15 @@
 Uploadify
 Copyright (c) 2012 Reactive Apps, Ronnie Garcia
 Released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
+改造 by zhuw
 */
-
+/*增加了float*/
 .uploadify {
 	position: relative;
 	margin-bottom: 1em;
+	float:left;
+	margin-left:1em;
+	margin-right:1em;
 }
 .uploadify-button {
 	background-color: #505050;
@@ -54,24 +58,37 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	background-color: #D0D0D0;
 	color: #808080;
 }
+/*增加了clear:both独占一行*/
 .uploadify-queue {
 	margin-bottom: 1em;
+	clear:both;
 }
+/*增加了width，height，margin，float*/
 .uploadify-queue-item {
+	float:left;
 	background-color: #F5F5F5;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	font: 11px Verdana, Geneva, sans-serif;
-	margin-top: 5px;
-	max-width: 350px;
+	margin: 5px 5px 5px 5px;
+	width: 100px;
+	height:100px;
 	padding: 10px;
+}
+/*自己加入控制文件名过长换行*/
+.fileName{
+ width:100px;
+ display:block;
+ word-break:break-all;
+ word-wrap:break-word;
 }
 .uploadify-error {
 	background-color: #FDE5DD !important;
 }
+/*修改了删除图标图片路径*/
 .uploadify-queue-item .cancel a {
-	background: url('/common/js/upload/uploadify-cancel.png') 0 0 no-repeat;
+	background: url('/js/upload/uploadify-cancel.png') 0 0 no-repeat;
 	float: right;
 	height:	16px;
 	text-indent: -9999px;

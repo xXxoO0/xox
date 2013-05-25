@@ -12,6 +12,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
         
+    <!-- 处理文件上传的Resolver -->    
+   <bean id="multipartResolver"  
+      class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+       <!-- 设置上传文件的最大尺寸为5MB -->  
+       <property name="maxUploadSize">  
+          <value>5242880</value>  
+       </property>  
+    </bean>  
+     
 	<!-- 多视图配置 -->
 	<!-- FreeMarker环境配置 -->  
 	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">   

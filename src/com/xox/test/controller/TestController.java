@@ -134,4 +134,5 @@ public class TestController {
 		list.add(new User("zw4","pwd4"));
 		JosnUtil.writeCollection(list, response);
 	}
+	
 }
