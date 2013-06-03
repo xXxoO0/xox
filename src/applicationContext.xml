@@ -30,7 +30,7 @@
     	</list>
     </property>
 </bean>
-<!-- 数据库配置 -->
+<!-- 数据库配置 --><!--改用连接池 -->
 <!-- <bean id ="dataSource" class ="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
 <!--     <property name="driverClassName" value="${driver}" /> -->
 <!-- 	<property name="url" value="${url}" /> -->
