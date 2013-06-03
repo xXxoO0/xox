@@ -2,4 +2,5 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans default-lazy-init="true" default-autowire="byName">
 	<bean id="testService" class="com.xox.test.service.impl.TestServiceImpl"></bean>
+	<bean id="userService" class="com.xox.business.user.UserService"></bean>
 </beans>

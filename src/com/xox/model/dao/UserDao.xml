@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xox.model.dao.UserDao">
+    <resultMap type= "User" id= "userResultMap" > 
+       			<result property="id" column="id"/> 
+                <result property="birthday" column="birthday"/> 
+                <result property="deleted" column="is_deleted"/> 
+                <result property="name" column="name"/> 
+                <result property="nickname" column="nickname"/> 
+                <result property="password" column="password"/> 
+                <result property="role" column="role"/> 
+                <result property="sex" column="sex"/> 
+            </resultMap >
+	<insert id="insert" parameterType="User" >
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+			select Sequence_3.nextval a from dual
+		</selectKey>
+		insert into XOX_USER(
+		            id,
+		            		              		birthday
+		              		            		              		,is_deleted
+		              		            		              		,name
+		              		            		              		,nickname
+		              		            		              		,password
+		              		            		              		,role
+		              		            		              		,sex
+		              		            					,i_order,d_created,i_creater) values(
+					#{id},
+							              		                  		                   #{birthday,jdbcType=DATE}
+		                  		              		            		              		                  		                   ,#{deleted}
+		                  		              		            		              		                  		                   ,#{name}
+		                  		              		            		              		                  		                   ,#{nickname}
+		                  		              		            		              		                  		                   ,#{password}
+		                  		              		            		              		                  		                   ,#{role}
+		                  		              		            		              		                  		                   ,#{sex,jdbcType=NUMERIC}
+		                  		              		            					,#{id},#{created},#{creater}) 
+	</insert>
+	<select id="get" parameterType="long" resultMap="userResultMap">
+		select * from XOX_USER where id = #{id}
+	</select >
+	<select id="findByWhere" parameterType="string" resultMap="userResultMap">
+		select * from XOX_USER where IS_DELETED=0
+		<choose> 
+			<when test="sqlWhere != null and sqlWhere != '' ">
+				and ${sqlWhere}
+			</when>
+		</choose>
+	</select>
+	<update id="delete" parameterType="long">  
+		update XOX_USER set i_flag = 0 where id = #{id}
+	</update> 
+	<update id="deleteByWhere" parameterType="long">  
+		update XOX_USER set i_flag = 0 where i_flag=-1
+		<choose> 
+			<when test="sqlWhere != null and sqlWhere != '' ">
+			  and ${sqlWhere}
+			</when>
+		</choose>
+	</update>
+	<update id="update" parameterType="User">  
+		update XOX_USER	
+			<include refid="userSet"/>
+		,XOX_USER.D_MODIFIED = #{modified}
+		,XOX_USER.I_EDITER = #{editer}
+		where id = #{id}
+	</update>
+	<update id="upAndDown" parameterType="User">  
+		update XOX_USER	
+			set i_order = (CASE
+                   WHEN id = #{idA} THEN
+                    (SELECT i_order FROM XOX_USER WHERE id = #{idB})
+                   WHEN id = #{idB} THEN
+                    (SELECT i_order FROM XOX_USER WHERE id = #{idA})
+                 END)
+		where id = #{idA} or id = #{idB}
+	</update>
+	<sql id="userSet">  
+		<set>  
+		   		    <if test="birthday != null and birthday != '' ">  
+            	XOX_USER.birthday = #{birthday},	
+			</if>   
+		   		    <if test="deleted != null and deleted != '' ">  
+            	XOX_USER.is_deleted = #{deleted},	
+			</if>   
+		   		    <if test="name != null and name != '' ">  
+            	XOX_USER.name = #{name},	
+			</if>   
+		   		    <if test="nickname != null and nickname != '' ">  
+            	XOX_USER.nickname = #{nickname},	
+			</if>   
+		   		    <if test="password != null and password != '' ">  
+            	XOX_USER.password = #{password},	
+			</if>   
+		   		    <if test="role != null and role != '' ">  
+            	XOX_USER.role = #{role},	
+			</if>   
+		   		    <if test="sex != null and sex != '' ">  
+            	XOX_USER.sex = #{sex},	
+			</if>   
+		       	</set>   
+    </sql>  
+</mapper> 

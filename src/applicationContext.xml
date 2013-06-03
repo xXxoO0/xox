@@ -39,7 +39,7 @@
 <!-- </bean> -->
 
 	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
-	<context:component-scan base-package="com.appframe,com.jingtoo.business" />
+<!-- 	<context:component-scan base-package="com.appframe,com.jingtoo.business" /> -->
 	<!-- 脱离容器的控制 使用DBCP数据库连接池 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<!-- 连接  信息 -->

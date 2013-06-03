@@ -31,23 +31,56 @@
     </property>
 </bean>
 <!-- 数据库配置 -->
-<bean id ="dataSource" class ="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-    <property name="driverClassName" value="${driver}" />
-	<property name="url" value="${url}" />
-	<property name="username" value="${username}" />
-	<property name="password" value="${password}" />
-</bean>
- 
-<tx:advice id="txAdvice" transaction-manager="transactionManager">
-    <tx:attributes>
-        <tx:method name="*" propagation="REQUIRED" />
-    </tx:attributes>
-</tx:advice>
+<!-- <bean id ="dataSource" class ="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
+<!--     <property name="driverClassName" value="${driver}" /> -->
+<!-- 	<property name="url" value="${url}" /> -->
+<!-- 	<property name="username" value="${username}" /> -->
+<!-- 	<property name="password" value="${password}" /> -->
+<!-- </bean> -->
 
-<aop:config>
-    <aop:pointcut id="defaultServiceOperation"
-        expression="execution(* com.xox.service.*.*(..))" />
-    <aop:advisor advice-ref="txAdvice"
-        pointcut-ref="defaultServiceOperation" />        
-</aop:config>   
+	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+<!-- 	<context:component-scan base-package="com.appframe,com.jingtoo.business" /> -->
+	<!-- 脱离容器的控制 使用DBCP数据库连接池 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- 连接  信息 -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 连接池设置-->
+		<property name="initialSize" value="${dbcp.initialSize}" />
+		<property name="maxActive" value="${dbcp.maxActive}" />
+        <property name="maxIdle" value="${dbcp.maxIdle}" />
+        <property name="maxWait" value="${dbcp.maxWait}" />
+        <property name="defaultAutoCommit" value="${dbcp.defaultAutoCommit}"/>
+        <property name="removeAbandoned" value="${dbcp.removeAbandoned}"/>
+        <property name="removeAbandonedTimeout" value="${dbcp.removeAbandonedTimeout}"/>
+        <property name="logAbandoned" value="${dbcp.logAbandoned}"/>
+	</bean>
+	
+	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+    	<property name="dataSource" ref="dataSource" />
+  	</bean>	
+  	
+  	<!-- mybatis配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+    	<property name="dataSource" ref="dataSource" />  
+    	<property name="configLocation" value="classpath:mybatisConfig.xml"></property>	
+	</bean> 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.xox.model.dao" />								
+    </bean> 
+ 
+<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> -->
+<!--     <tx:attributes> -->
+<!--         <tx:method name="*" propagation="REQUIRED" /> -->
+<!--     </tx:attributes> -->
+<!-- </tx:advice> -->
+
+<!-- <aop:config> -->
+<!--     <aop:pointcut id="defaultServiceOperation" -->
+<!--         expression="execution(* com.xox.service.*.*(..))" /> -->
+<!--     <aop:advisor advice-ref="txAdvice" -->
+<!--         pointcut-ref="defaultServiceOperation" />         -->
+<!-- </aop:config>    -->
 </beans>

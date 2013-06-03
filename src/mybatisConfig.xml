@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">    
+<configuration>  
+    <typeAliases>  
+    			<typeAlias alias="User" type="com.xox.model.entity.User"/>             
+            </typeAliases>   
+<!--             <plugins> -->
+<!-- 				<plugin interceptor="com.appframe.core.dao.myBatis.PagePlugin"> -->
+<!-- 					<property name="SQLID" value=".*Page.*" /> -->
+<!-- 				</plugin> -->
+<!--                 <plugin interceptor="com.appframe.core.dao.myBatis.InsertPlugin"> -->
+<!-- 					<property name="SQLID" value=".*insert.*" /> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin interceptor="com.appframe.core.dao.myBatis.UpdatePlugin"> -->
+<!-- 					<property name="SQLID" value=".*update.*" /> -->
+<!-- 				</plugin> -->
+<!-- 				<plugin interceptor="com.appframe.core.dao.myBatis.DeleteDatePlugin"> -->
+<!-- 					<property name="SQLID" value=".*delete.*" /> -->
+<!-- 				</plugin> -->
+<!-- 	</plugins> -->
+</configuration> 
