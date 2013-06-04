@@ -1,0 +1,545 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+<!-- 
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/base-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/table-min.css">
+ -->
+<link rel="stylesheet" href="/css/xox.css">
+<script src="http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+</head>
+<body>
+<div class="pure-skin-xox" >
+<h5>menu样式1</h5>
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li class="pure-menu-selected"><a href="#">Flickr</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Finance</a></li>
+    </ul>
+</div>
+<h5>menu样式2 第一个是头不能点</h5>
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading">Site Title</a>
+    <ul>
+        <li class="pure-menu-selected"><a href="#">Home</a></li>
+        <li><a href="#">Flickr</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Finance</a></li>
+    </ul>
+</div>
+<h5>menu样式3竖直方向</h5>
+<div class="pure-menu pure-menu-open" style="width:200px;">
+    <a class="pure-menu-heading">Yahoo! Sites</a>
+    <ul>
+        <li><a href="#">Flickr</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Finance</a></li>
+        <li class="pure-menu-heading">More Sites!</li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">OMG!</a></li>
+    </ul>
+</div>
+<h5>menu样式4带下拉的</h5>
+<div id="horizontal-menu" class="pure-menu pure-menu-open pure-menu-horizontal">
+    <ul id="std-menu-items">
+        <li class="pure-menu-selected"><a href="#">Flickr</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Finance</a></li>
+        <li>
+            <a href="#">Other</a>
+            <ul>
+                <li class="pure-menu-heading">More from Yahoo!</li>
+                <li class="pure-menu-separator"></li>
+                <li><a href="#">Autos</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Answers</a></li>
+                <li>
+                    <a href="#">Even More</a>
+                    <ul>
+                        <li><a href="#">Horoscopes</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">OMG</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+//需要引入yui雅虎的js库
+/*
+ * http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js
+ */
+YUI({
+    classNamePrefix: 'pure'
+}).use('gallery-sm-menu', function (Y) {
+    var horizontalMenu = new Y.Menu({
+        container         : '#horizontal-menu',
+        sourceNode        : '#std-menu-items',
+        orientation       : 'horizontal',
+        hideOnOutsideClick: false,
+        hideOnClick       : false
+    });
+    horizontalMenu.render();
+    horizontalMenu.show();
+});
+</script>
+<h5>menu样式5设置不能点击的按钮</h5>
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading">Site Title</a>
+
+    <ul>
+        <li class="pure-menu-selected"><a href="#">Home</a></li>
+        <li><a href="#">Flickr</a></li>
+        <li class="pure-menu-disabled"><a href="#">Disabled Item</a></li>
+    </ul>
+</div>
+<h5>button样式 用a和button</h5>
+<a class="pure-button">A Pure Button</a>
+<button class="pure-button">A Pure Button</button>
+<h5>button样式 用a和button  disabled</h5>
+<a class="pure-button pure-button-disabled">A Disabled Button</a>
+<button class="pure-button pure-button-disabled">A Disabled Button</button>
+<h5>button样式 用a和button  从disabled激活</h5>
+<a class="pure-button pure-button-active">An Active Button</a>
+<button class="pure-button pure-button-active">An Active Button</button>
+<h5>button样式 关键的按钮</h5>
+<a class="pure-button pure-button-primary">A Primary Button</a>
+<button class="pure-button pure-button-primary">A Primary Button</button>
+<h5>button样式 各种警告错误等按钮</h5>
+<div>
+    <style scoped>
+        .pure-button-success,
+        .pure-button-error,
+        .pure-button-warning,
+        .pure-button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        .pure-button-success {
+            background: rgb(76, 201, 71); /* this is a green */
+        }
+        .pure-button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+        .pure-button-warning {
+            background: orange;
+        }
+        .pure-button-secondary {
+            background: rgb(95, 198, 218); /* this is a light blue */
+        }
+    </style>
+    <a class="pure-button pure-button-success">Success Button</a>
+    <a class="pure-button pure-button-error">Error Button</a>
+    <a class="pure-button pure-button-warning">Warning Button</a>
+    <a class="pure-button pure-button-secondary">Secondary Button</a>
+</div>
+<h5>button样式 各种大小按钮</h5>
+<div>
+    <style scoped>
+        .pure-button-xsmall {
+            font-size: 70%;
+        }
+        .pure-button-small {
+            font-size: 85%;
+        }
+        .pure-button-large {
+            font-size: 110%;
+        }
+        .pure-button-xlarge {
+            font-size: 125%;
+        }
+    </style>
+    <a class="pure-button pure-button-xsmall">Extra Small Button</a>
+    <a class="pure-button pure-button-small">Small Button</a>
+    <a class="pure-button">Regular Button</a>
+    <a class="pure-button pure-button-large">Large Button</a>
+    <a class="pure-button pure-button-xlarge">Extra Large Button</a>
+</div>
+<!-- 这里没有图标ico所以无效了 -->
+<h5>带图标的按钮</h5>
+<button class="pure-button">
+    <i class="icon-cog"></i>
+    Settings
+</button>
+<a class="pure-button" href="#0">
+    <i class="icon-shopping-cart icon-large"></i>
+    Checkout
+</a>
+<h5>form登录表单样式1</h5>
+<form class="pure-form">
+    <fieldset>
+        <legend>A compact inline form</legend>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <label for="remember">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="pure-button notice">Sign in</button>
+    </fieldset>
+</form>
+<h5>form登录表单样式2</h5>
+<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>A Stacked Form</legend>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
+        <label for="state">State</label>
+        <select id="state">
+            <option>AL</option>
+            <option>CA</option>
+            <option>IL</option>
+        </select>
+        <label for="remember" class="pure-checkbox">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="pure-button notice">Sign in</button>
+    </fieldset>
+</form>
+<h5>form登录表单样式3</h5>
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Username</label>
+            <input id="name" type="text" placeholder="Username">
+        </div>
+        <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+        <div class="pure-control-group">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Email Address">
+        </div>
+        <div class="pure-control-group">
+            <label for="foo">Supercalifragilistic Label</label>
+            <input id="foo" type="text" placeholder="Enter something here...">
+        </div>
+        <div class="pure-controls">
+            <label for="cb" class="pure-checkbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+            <button type="submit" class="pure-button">Submit</button>
+        </div>
+    </fieldset>
+</form>
+<h5>form登录表单样式4</h5>
+<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Legend</legend>
+        <div class="pure-g-r">
+            <div class="pure-u-1-3">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text">
+            </div>
+            <div class="pure-u-1-3">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text">
+            </div>
+            <div class="pure-u-1-3">
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" required>
+            </div>
+            <div class="pure-u-1-3">
+                <label for="city">City</label>
+                <input id="city" type="text">
+            </div>
+            <div class="pure-u-1-3">
+                <label for="state">State</label>
+                <select id="state" class="pure-input-medium">
+                    <option>AL</option>
+                    <option>CA</option>
+                    <option>IL</option>
+                </select>
+            </div>
+        </div>
+        <label for="terms" class="pure-checkbox">
+            <input id="terms" type="checkbox"> I've read the terms and conditions
+        </label>
+        <button type="submit" class="pure-button notice">Submit</button>
+    </fieldset>
+</form>
+<h5>form登录表单样式5</h5>
+<form class="pure-form">
+    <fieldset class="pure-group">
+        <input type="text" class="pure-input-1-2" placeholder="Username">
+        <input type="text" class="pure-input-1-2" placeholder="Password">
+        <input type="email" class="pure-input-1-2" placeholder="Email">
+    </fieldset>
+    <fieldset class="pure-group">
+        <input type="text" class="pure-input-1-2" placeholder="Another Group">
+        <input type="text" class="pure-input-1-2" placeholder="More Stuff">
+    </fieldset>
+    <button type="submit" class="pure-button pure-input-1-2 notice">Sign in</button>
+</form>
+<h5>input样式1</h5>
+<form class="pure-form">
+    <input class="pure-input-1" type="text" placeholder=".pure-input-1"><br>
+    <input class="pure-input-2-3" type="text" placeholder=".pure-input-2-3"><br>
+    <input class="pure-input-1-2" type="text" placeholder=".pure-input-1-2"><br>
+    <input class="pure-input-1-3" type="text" placeholder=".pure-input-1-3"><br>
+    <input class="pure-input-1-4" type="text" placeholder=".pure-input-1-4"><br>
+ </form>
+ <h5>input样式2</h5>
+ <form class="pure-form pure-g">
+    <div class="pure-u-1-4">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-4">
+    </div>
+    <div class="pure-u-3-4">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-3-4">
+    </div>
+    <div class="pure-u-1-2">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+    </div>
+    <div class="pure-u-1-2">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+    </div>
+    <div class="pure-u-1-8">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-8">
+    </div>
+    <div class="pure-u-1-8">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-8">
+    </div>
+    <div class="pure-u-1-4">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-4">
+    </div>
+    <div class="pure-u-1-2">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+    </div>
+    <div class="pure-u-1-5">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1-5">
+    </div>
+    <div class="pure-u-2-5">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-2-5">
+    </div>
+    <div class="pure-u-2-5">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-2-5">
+    </div>
+    <div class="pure-u-1">
+        <input class="pure-input-1" type="text" placeholder=".pure-u-1">
+    </div>
+</form>
+<h5>input样式3 必填</h5>
+<form class="pure-form">
+    <input type="email" placeholder="Requires an email" required>
+</form>
+<h5>input样式4 disabled</h5>
+<form class="pure-form">
+    <input type="text" placeholder="Disabled input here..." disabled>
+</form>
+<h5>input样式5 圆形</h5>
+<form class="pure-form">
+    <input type="text" class="pure-input-rounded">
+    <button type="submit" class="pure-button">Search</button>
+</form>
+<h5>Checkboxes and Radios</h5>
+<form class="pure-form">
+    <label for="option-one" class="pure-checkbox">
+        <input id="option-one" type="checkbox" value="">
+        Here's option one.
+    </label>
+    <label for="option-two" class="pure-radio">
+        <input id="option-two" type="radio" name="optionsRadios" value="option1" checked>
+        Here's a radio button. You can choose this one..
+    </label>
+    <label for="option-three" class="pure-radio">
+        <input id="option-three" type="radio" name="optionsRadios" value="option2">
+        ..Or this one!
+    </label>
+</form>
+<h5>h样式</h5>
+<table class="pure-table">
+<tr>
+<td><h1>头1</h1></td>
+<td><h2>头2</h2></td>
+<td><h3>头3</h3></td>
+<td><h4>头4</h4></td>
+<td><h5>头5</h5></td>
+<td><h6>头6</h6></td>
+</tr>
+</table>
+<h5>table样式1</h5>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2009</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2012</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Hyundai</td>
+            <td>Elantra</td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+<h5>table样式2</h5>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2009</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2012</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Hyundai</td>
+            <td>Elantra</td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+<h5>table样式3</h5>
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2009</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2012</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Hyundai</td>
+            <td>Elantra</td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+<h5>table样式4</h5>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="pure-table-odd">
+            <td>1</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2009</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2012</td>
+        </tr>
+        <tr class="pure-table-odd">
+            <td>3</td>
+            <td>Hyundai</td>
+            <td>Elantra</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ford</td>
+            <td>Focus</td>
+            <td>2008</td>
+        </tr>
+        <tr class="pure-table-odd">
+            <td>5</td>
+            <td>Nissan</td>
+            <td>Sentra</td>
+            <td>2011</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>BMW</td>
+            <td>M3</td>
+            <td>2009</td>
+        </tr>
+        <tr class="pure-table-odd">
+            <td>7</td>
+            <td>Honda</td>
+            <td>Civic</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Kia</td>
+            <td>Soul</td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+<h5>分页条整合</h5>
+<ul class="pure-paginator">
+    <li><a class="pure-button prev" href="#">&#171;</a></li>
+    <li><a class="pure-button" href="#">1</a></li>
+    <li><a class="pure-button pure-button-active" href="#">2</a></li>
+    <li><a class="pure-button" href="#">3</a></li>
+    <li><a class="pure-button" href="#">4</a></li>
+    <li><a class="pure-button" href="#">5</a></li>
+    <li><a class="pure-button next">&#187;</a></li>
+</ul>
+</div>
+</body>
+</html>
