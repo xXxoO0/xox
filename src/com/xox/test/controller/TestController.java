@@ -5,12 +5,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,7 +47,8 @@ public class TestController {
 	@RequestMapping("/test/jsp/helloWorld/test")
 	public String jsptest(Model model){
 		model.addAttribute("message", "jsp测试!");
-	    return "hello";
+		return "/test/ajaxtest";
+	   // return "hello";
 	}
 	/** 非常灵活的 url路径上
 	@RequestMapping(value="/owners/{ownerId}/pets/{petId}", method=RequestMethod.GET)
@@ -135,4 +139,43 @@ public class TestController {
 		JosnUtil.writeCollection(list, response);
 	}
 	
+	  /**
+     * 取出cookie中的值和请求报头中的值绑定到方法参数中
+     * @param sessionId
+     * @param accpetLanguage
+     * @return
+     */
+    @RequestMapping("/handle2")
+    public ModelAndView handle2(
+                @CookieValue("JSESSIONID") String sessionId,
+                @RequestHeader("Accept-Language") String accpetLanguage
+            ){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/success");
+        mav.addObject("user",new User());
+        return null;
+    }
+    /**
+     * 请求参数按照名称匹配绑定到user的属性中.？？？
+     * @date 20123-06-07
+     * @param user
+     * @return
+     */
+    @RequestMapping("/handle3")
+    public String handle3(User user){
+        //do something
+        return "success";
+    }
+    /**
+     * 直接把request对象传入到方法参数中，由此我们可以获取请求中许多东西
+     * @param request
+     * @return
+     */
+    @RequestMapping("/handle4")
+    public String handle4(HttpServletRequest request){
+        //do something
+    	//可以获取session
+    	HttpSession session=request.getSession();
+        return "success";
+    }
 }
