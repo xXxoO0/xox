@@ -20,6 +20,7 @@
 }
 
 .xox-c-1,.xox-c-1-2,.xox-c-1-3,.xox-c-2-3,.xox-c-1-4,.xox-c-3-4 {
+	padding:1px 1px 1px 1px;
 	display: inline-block;
 	zoom: 1;
 	*display: inline;
@@ -42,19 +43,19 @@
 }
 
 .xox-c-1-3 {
-	width: 299.9997px;
+	width: 269.9997px;
 }
 
 .xox-offset-1-3 {
-	margin-left: 299.9997px;
+	margin-left: 269.9997px;
 }
 
 .xox-c-2-3 {
-	width: 600.0003px;
+	width: 640.0003px;
 }
 
 .xox-offset-2-3 {
-	margin-left: 600.0003px;
+	margin-left: 640.0003px;
 }
 
 .xox-c-1-4 {

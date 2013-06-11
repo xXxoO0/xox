@@ -1,0 +1,128 @@
+.img-box{
+	overflow: hidden;
+	clear: both;
+	line-height:1.5;
+    font-family:Arial, Tahoma, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+}
+.img-show{
+	overflow: hidden;
+	padding:5px 5px 5px 5px;
+	margin:0 0 0 0;
+	position:relative;
+	background-attachment:scroll;
+	background-origin:padding-box;
+	background-clip:border-box;
+	background-color:rgb(240,248,249);
+}
+.img-show-ol{
+	overflow:hidden;
+	margin:0 0 0 0;
+	padding:3px 3px 3px 3px;
+	border-color:#ddd;
+	border-style:solid;
+	border-width:1px;
+	background-attachment:scroll;
+	background-repeat:repeat;
+	background-size:auto;
+	background-origin:padding-box;
+	background-clip:border-box;
+	background-color:rgb(255,255,255);
+}
+.img-show-li{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+    list-style-type:none;
+    list-style-position:outside;
+    list-style-image:none;
+    overflow:hidden;
+}
+.img-li-current{
+    filter: Alpha(Opacity=100);
+    position: absolute; 
+    z-index: 2; 
+    zoom: 1;
+}
+.img-li-normal{
+    filter: Alpha(Opacity=0);
+    position: absolute; 
+    z-index: 1; 
+    zoom: 1;
+}
+.img-show-a{
+	outline-width:medium;
+	outline-style:none;
+	outline-color:invert;
+	text-decoration:none;
+	color:#333;
+}
+.img-show-img{
+	border-color:currentColor;
+	border-width:medium;
+	border-style:none;
+}
+.img-show-bt{
+	display: block;
+	z-index: 2;
+	position: absolute;
+	right: 9px;
+	background-color: #000;
+	opacity: .5;
+}
+.img_bt_ul{
+	z-index: 3;
+	position: absolute;
+	height: 25px;
+	padding-top: 5px;
+	right: 9px;
+}
+.img_bt_li_left{
+	position: relative;
+	overflow: hidden;
+	float: left;
+	width: 320px;
+	line-height: 14px;
+	padding: 3px 0 0 10px;
+	font-size: 14px;
+	color: #FFF;
+	list-style: none;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.img_bt_li_right{
+	float: right;
+	position: relative;
+	overflow: hidden;	
+	list-style: none;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.img_span_current{
+	display:block;
+}
+.img_span_normal{
+	display:none;
+}
+.img_p_off{
+	display: block;
+	float: left;
+	height: 19px;
+	width: 19px;
+	margin-right: 10px;
+	cursor: pointer;
+	font-size: 0;
+	background: url(img_p_on.png) no-repeat -22px 0;
+}
+.img_p_on{
+   display: block;
+   float: left;
+   height: 19px;
+   width: 19px;
+   margin-right: 10px;
+   cursor: pointer;
+   font-size: 0;
+   background: url(img_p_on.png) no-repeat 0 0;
+}
