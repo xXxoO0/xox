@@ -2,206 +2,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+ -->
 <link rel="stylesheet" href="/css/xox.css">
 <link rel="stylesheet" href="/css/xox-dz.css">
 <script src="/js/jquery-1.7.2.min.js"></script>
 <script src="/js/switchImg/switchImage.js"></script>
 <link rel="stylesheet" href="/js/switchImg/switchImage.css">
 <style>
-body{
-  background:#F4F4F4;
-}
-/*
-div{
-   border-style:solid;border-width:1px;
-}
-*/
-#menubar{
-	width:910px;
-	margin:0 auto;
-}
-#menubar ul li{
-  margin：0px；
-  padding：0px；
-}
-#menucontainer{
-	background-color:#f0f8f9;
-}
-#menu-right{
-	float:right;
-}
-#menu-right a{
-	font-size:10pt;
-	display:block;
-	float:left;
-	padding-left:0px;
-	padding-right:0px;
-	line-height:2.0em;
-	margin-left:0px;
-	margin-right:0px;
-}
-.small-text{
-	font-size:10pt;
-}
-.clear{
-	clear:both;
-}
-.clear-35{
-	margin-top: 35px;
-	clear:both;
-}
-#container{
-  margin:0 auto;
-  width:920px;
-}
-/*正文部分
-*/
-#con-main{
-   width:620px;
-   padding:5px 5px 5px 5px;
-}
-#bottom{
-     
-}
-#logindiv{
-  margin-left:20px;
-  margin-top:5px;
-  height:50px;
-  width:270px;
-  background-color:rgb(255,255,255);
-}
 
-.pure-button-success,
-.pure-button-error,
-.pure-button-warning,
-.pure-button-secondary {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-.pure-button-success {
-    background: rgb(76, 201, 71); /* this is a green */
-}
-.pure-button-error {
-    background: rgb(202, 60, 60); /* this is a maroon */
-}
-.pure-button-warning {
-    background: orange;
-}
-.pure-button-secondary {
-    background: rgb(95, 198, 218); /* this is a light blue */
-}
-#logbtn{
-    margin-top:10px;
-    margin-left:5px;
-}
-
-.div-header{
-	margin: 0;
-	display: block;
-	font: 12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
-}
-.div-header h2{
-    margin-left:10px;
-	color: #369;
-	font-size: 14px;
-}
-.main-title{
-   float:left;
-   width:190px;
-   height:160px;
-   padding:1px 3px 2px 3px;
-   margin:2px 2px 2px 2px;
-   background-color:rgb(255,255,255);
-   border-color:#ddd;
-   border-style:solid;
-   border-width:1px;
-}
-.main-title-left{
-   float:left;
-   width:190px;
-   height:160px;
-   padding:1px 3px 2px 3px;
-   margin:2px 6px 2px 0px;
-   background-color:rgb(255,255,255);
-   border-color:#ddd;
-   border-style:solid;
-   border-width:1px;
-}
-.main-title-right{
-   float:left;
-   width:190px;
-   height:160px;
-   padding:1px 3px 2px 3px;
-   margin:2px 0px 2px 6px;
-   background-color:rgb(255,255,255);
-   border-color:#ddd;
-   border-style:solid;
-   border-width:1px;
-}
-.main-title-a{
-   text-decoration:none;
-}
-.main-title-img{
-	padding:5px 1px 1px 1px;
-    width:188px;
-    height:130px;
-}
-#switchImg{
-   width:620px;
-   height:250px;
-}
-#con-title{
-    width:620px;
-}
-#con-title ul{
-    width:100%;
-    background-color:rgb(255,255,255);
-}
-#con-title li{
-	width:100%;
-    margin:0 0 0 0;
-	padding:0 0 0 0;
-    list-style-type:none;
-    overflow:hidden;
-    height: 26px;
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-#con-title a{
-   text-decoration:none;
-}
-
-#guanggao{
-   width:295px;
-   height:150px;
-}
-#dibu{
-   width:220px;
-   height:150px;
-}
-#bottom{
-   height:150px;
-}
 </style>
 </head>
 <body>
-<div class="pure-skin-xox" >
 <div id="menucontainer">
-<div id="menubar" class="pure-menu pure-menu-open pure-menu-horizontal">
-    <ul>
-        <li>logo区域.........</li>
-        <li class="pure-menu-selected"><a href="#">首页</a></li>
-        <li><a href="#">栏目1</a></li>
-        <li><a href="#">栏目2</a></li>
-        <li><a href="#">栏目3</a></li>
-        <li><a href="#">联系我们</a></li>
+<div id="menubar" >
+     <h1><a  class="logo" href="/" title="一库">一库</a></h1>
+    <ul class="xox-nav">
+        <li ><a class="current" href="#"><span>首页</span></a></li>
+        <li class="middle"><a href="#"><span>栏目</span></a></li>
+        <li class="middle"><a href="#"><span>只能</span></a></li>
+        <li class="right"><a href="#"><span>两字</span></a></li>
     </ul>
-	<span id="menu-right">
-		<a href="#">注册|</a>
-		<a href="#">登录</a>
-	</span>
+    <ul class="xox-navigate">
+        <li class="xox-navigate-list"><a href="#">注册</a></li>
+        <li class="xox-navigate-list"><a href="#">登录</a></li>
+    </ul>
 </div>
 </div>
 <div class="clear-35"></div>
@@ -215,6 +41,8 @@ div{
 				<li><a href="#" title="图片1"><img alt="无图" src="/store/20130611/402886E43F31CE21013F31CE21560000.jpg" border="0" /></a></li>
 				<li><a href="#" title="图片2"><img alt="无图" src="/store/20130611/402886E43F31CE21013F31D4CAC60001.jpg" border="0" /></a></li>
 				<li><a href="#" title="图片3"><img alt="无图" src="/store/20130611/402886E43F31CE21013F31CE21560000.jpg" border="0" /></a></li>
+				<li><a href="#" title="图片4"><img alt="无图" src="/store/20130611/402886E43F31CE21013F31D4CAC60001.jpg" border="0" /></a></li>
+				<li><a href="#" title="图片5"><img alt="无图" src="/store/20130611/402886E43F31CE21013F31CE21560000.jpg" border="0" /></a></li>
 				</ol>
 				<div id="imgBottom">
 				</div>
@@ -223,9 +51,13 @@ div{
 						<span class="img_span_current">1阿斯达1</span>
 						<span class="img_span_normal">2阿斯达2</span>
 						<span class="img_span_normal">3阿斯达3</span>
+						<span class="img_span_normal">4阿斯达4</span>
+						<span class="img_span_normal">5阿斯达5</span>
 					</li>
 					<li class="img_bt_li_right">
 						<p  class="img_p_on"></p>
+						<p  class="img_p_off"></p>
+						<p  class="img_p_off"></p>
 						<p  class="img_p_off"></p>
 						<p  class="img_p_off"></p>
 					</li>
@@ -369,10 +201,31 @@ div{
 		 </div>
     </div>
 </div>
-<div id="bottom">
-底部内容
 </div>
+<div id="linker">
+	<div class="container">
+	<span>友情合作</span>
+	<a href="#">baidu</a>
+	<a href="#">微软</a>
+	<a href="#">baidu</a>
+	<a href="#">雅虎</a>
+	<a href="#">baidu</a>
+	<a href="#">google</a>
+	<a href="#">baidu</a>
+	<a href="#">google</a>
+	</div>
 </div>
+<div id="footer">
+	<div class="container">
+	CopyRights ©2011-2013 <a href="#">网站网址</a> - <a href="#">关于我们</a> -
+	<a href="#">联系我们</a> - <a href="#">官方博客</a> - 
+	<a href="#">建议反馈</a> - <a href="#">帮助文档</a> - 沪ICP备10212628号-3
+	</div>
+	<div class="container" style="overflow: hidden;padding: 10px 0;">
+	<a href="#" target="_blank" title="123"><img src="http://static.ikeepu.com/r-20130115/i/base/zx110_org.png" width="120" height="52"></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="#" target="_blank" title="123"><img src="http://static.ikeepu.com/r-20130115/i/base/ikeepu_icp.png" width="130" height="52"></a>
+	</div>
 </div>
 <script>
 //轮播插件
