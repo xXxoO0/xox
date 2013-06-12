@@ -24,17 +24,30 @@ li {
 div {
 	display: block;
 }
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: underline;
+}
 body{
   background:#F4F4F4;
   margin: 0;
   padding:0;
-  font: 12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
+  font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
 }
-/*
-div{
-   border-style:solid;border-width:1px;
+.fl{
+	float:left;
 }
-*/
+.fr{
+	float:right;
+}
 .logo{
    outline: none;
    text-decoration: none;
@@ -48,7 +61,7 @@ div{
 	position: absolute;
 	left: 0;
 	top: 2px;
-	background: url(../image/xox-logo.png) no-repeat;
+	background: url(../image/bg/xox-logo.png) no-repeat;
 	width: 96px;
 	height: 37px;
 	padding: 0;
@@ -60,6 +73,250 @@ div{
 	font-weight: normal;
 	margin: 0;
 }
+.xox_right{
+	border-color:#ddd;
+    border-style:solid;
+    border-width:1px;
+	width:270px;
+	color: #666;
+	background: #fff;
+	margin-top: 20px;
+	float: right;
+	font: 12px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.xox_middle{
+	width:600px;
+	background-color:rgb(255,255,255);
+	padding:5px 4px 5px 5px;
+	margin:0 0 0 5px;
+	height:250px;
+	border-color:#ddd;
+    border-style:solid;
+    border-width:1px;
+}
+.xox_middle .header{
+	width:600px;
+	border: none;
+}
+.tabs{
+	height: 32px;
+	left: 0;
+	float:left;
+	background: #eaf9fe none;
+	border-color: #e5e5e5;
+	width:500px;
+	overflow: visible;
+	padding-right: 2px;
+	border: none;
+}
+.tabs-r{
+	background: #eaf9fe none;
+	border-color: #e5e5e5;
+	display:block;
+	float:right;
+	width:98px;
+	height: 32px;
+}
+.tabs-r a{
+	height: 30px;
+	line-height: 30px;
+}
+.tabs ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font: 12px/20px arial, helvetica, verdana, tahoma, sans-serif;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.tabs ul li{
+	float: left;
+	overflow: hidden;
+	height: 30px;
+	margin: 0;
+	margin-right: -1px;
+	border-top: 1px solid #e5e5e5;
+	border: 1px solid #e5e5e5;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.tabs ul li.current {
+	cursor: default;
+	height: 31px;
+	font-weight: bold;
+	background: #fff;
+	border-bottom: none;
+}
+.tabs ul li a{
+	height: 30px;
+	line-height: 30px;
+	padding: 0 14px;
+	text-align: center;
+	font-size: 14px;
+}
+hr.null {
+	border: none;
+	border-top: 1px solid transparent;
+	clear: both;
+	height: 0;
+	margin: 15px 0;
+}
+user agent stylesheethr {
+	display: block;
+	-webkit-margin-before: 0.5em;
+	-webkit-margin-after: 0.5em;
+	-webkit-margin-start: auto;
+	-webkit-margin-end: auto;
+	border-style: inset;
+	border-width: 1px;
+}
+#right_bottom{
+	width:260px;
+	margin:10px 5px 3px 5px;
+}
+#right_bottom .gray{
+	color: #999;
+}
+#right_bottom .xox_mobile{
+	background: url(http://img.xiami.com/res/v3/img/xiami_mobile.png) no-repeat scroll 160px 0 transparent;
+	display: block;
+	height: 60px;
+	line-height: 20px;
+	margin: 15px 0 0;
+	padding: 0 140px 15px 5px;
+	text-decoration: none;
+}
+#right_bottom a{
+	color: #666;
+}
+#right_bottom cite{
+	font-style: normal;
+    font-weight: 400;
+}
+#right_bottom ul{
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+#right_bottom ul li a{
+	display: block;
+	float:left;
+	width: 220px;
+	overflow: hidden;
+}
+#right_bottom ul li{
+	display: list-item;
+	font-size: 12px;
+	line-height: 2.2;
+	white-space: nowrap;
+	border-bottom: 1px dotted #ddd;
+	clear:both;
+}
+#right_bottom ul li span{
+	float:right;
+}
+#right_bottom h2{
+	font-family: 'Hiragino Sans GB','Microsoft YaHei',sans-serif!important;
+	margin: 0 0 5px;
+	font-size: 16px;
+	color: #666;
+	border-bottom: 2px solid #d8e1e3;
+	padding-bottom: 10px;
+	color: #333;
+	text-indent: 5px;
+	font-weight: 400;
+}
+.xox_menu{
+	border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+	width: 910px;
+	margin: 0 auto;
+	height: 62px;
+	z-index: 50;
+}
+.xox_menu .more{
+	color: #8ca6d7;
+}
+.xox_menu dl{
+	padding: 7px 0 7px 10px;
+	zoom: 1;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	display: block;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font: 12px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: left;
+}
+.xox_menu dl dt{
+	font-weight: bold;
+	color: #666666;
+	float: left;
+	line-height: 24px;
+	padding-right: 20px;
+	word-wrap: normal;
+	white-space: nowrap;
+}
+.xox_menu dl dd{
+	float: left;
+	line-height: 24px;
+	padding-right: 20px;
+	word-wrap: normal;
+	white-space: nowrap;
+}
+.xox_menu dl dd a{
+	color:#999999;
+	cursor: pointer;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+.xox_menu1{
+	width: 260px;
+	margin: 0 auto;
+	height: 220px;
+	z-index: 50;
+}
+.xox_menu1 span{
+	font: 12px Arial,Helvetica,sans-serif;
+	line-height: 150%;
+	color: #666;
+}
+.xox_menu1 h2{
+	font: 15px Arial,Helvetica,sans-serif;
+	color: #072;
+	margin: 10px 0 12px 0;
+	line-height: 150%;
+}
+.xox_menu1 ul{
+	list-style: none;
+	margin-left: 10px;
+}
+.xox_menu1 ul li{
+	float:left;
+	text-align: left;
+	width: 5em;
+	line-height: 1.62;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: left;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: top;
+	font-size: 12px;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+
+
 #menubar{
 	width:910px;
 	margin:0 auto;
@@ -88,18 +345,18 @@ div{
 }
 #menubar .xox-nav li {
     float: left;
-    background: url(../image/xox-sp-header.png) no-repeat -70px -40px;
+    background: url(../image/bg/xox-sp-header.png) no-repeat -70px -40px;
 	height: 31px;
 	width: 61px;
 	text-align: -webkit-match-parent;
 }
-#menubar .middle {
-    background: url(../image/xox-sp-header.png) no-repeat -141px -40px;
+#menubar .xox-nav .middle {
+    background: url(../image/bg/xox-sp-header.png) no-repeat -141px -40px;
 	height: 31px;
 	width: 60px;
 }
-#menubar .right {
-    background: url(../image/xox-sp-header.png) no-repeat -211px -40px;
+#menubar .xox-nav .right {
+    background: url(../image/bg/xox-sp-header.png) no-repeat -211px -40px;
 	height: 31px;
 	width: 61px;
 }
@@ -108,22 +365,22 @@ div{
 	display: block;
 	padding: 6px 7px 7px 7px;
 	margin: 1px 1px 1px 0;
-	text-decoration: none;
 }
 #menubar  li a span{
 	font-size:10pt;
-	margin-left: 10px;;
-	margin-right: 10px;;
+	display:block;
+	margin-left: 9px;
+	margin-right: 9px;
 }
 #menubar .current{
-	background: url(../image/xox-sp-header.png) no-repeat 0 -40px;
+	background: url(../image/bg/xox-sp-header.png) no-repeat 0 -40px;
 }
 #menucontainer{
 	width: 100%;
 	min-width: 910px;
 	height: 42px;
 	z-index: 100;
-	background: url(../image/xox-header.jpg) repeat-x center center;
+	background: url(../image/bg/xox-header.jpg) repeat-x center center;
 	position: fixed;
 	top:0;
 	left:0;
@@ -135,8 +392,12 @@ div{
 .clear{
 	clear:both;
 }
-.clear-35{
-	margin-top: 35px;
+.clear-5{
+	margin-top: 5px;
+	clear:both;
+}
+.clear-50{
+	margin-top: 50px;
 	clear:both;
 }
 #container{
@@ -154,10 +415,17 @@ div{
      
 }
 #logindiv{
-  margin-left:20px;
+  margin-left:0px;
+  margin-right:0px;
   margin-top:5px;
+  padding-left:0px;
+  padding-right:0px;
   height:50px;
+  float:right;
   width:270px;
+  border-color:#ddd;
+  border-style:solid;
+  border-width:1px;
   background-color:rgb(255,255,255);
 }
 
@@ -241,30 +509,28 @@ div{
    width:620px;
    height:250px;
 }
-#con-title{
-    width:620px;
+.xox_ad{
+	clear:both;
+	display:block;
+	width:905px;
+	height:90px;
+	margin:0 auto;
+	padding:2px 0px 2px 3px;
+	background-color:rgb(255,255,255);
+	border-color:#ddd;
+    border-style:solid;
+    border-width:1px;
 }
-#con-title ul{
-    width:100%;
-    background-color:rgb(255,255,255);
+.xox_ad1{
+	height:260px;
+	width:260px;
+	margin:3px 5px 3px 5px;
 }
-#con-title li{
-	width:100%;
-    margin:0 0 0 0;
-	padding:0 0 0 0;
-    list-style-type:none;
-    overflow:hidden;
-    height: 26px;
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-#con-title a{
-   text-decoration:none;
-}
-
-#guanggao{
-   width:295px;
-   height:150px;
+.xox_ad img{
+	padding:1px 1px 1px 1px;
+	height :88px;
+	width:901px;
+	border:none; 
 }
 #dibu{
    width:220px;
@@ -284,7 +550,6 @@ div{
 	margin-left: 10px;
 	color: #666;
 	outline: none;
-	text-decoration: none;
 	text-align: center;
 }
 #footer{
@@ -299,7 +564,6 @@ div{
 #footer .container  a{
 	color: #999;
 	outline: none;
-	text-decoration: none;
 }
 
 

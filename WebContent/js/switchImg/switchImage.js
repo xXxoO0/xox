@@ -61,7 +61,7 @@
 				'width':settings.bgwidth
 			});
 			$(".img_bt_ul").css({
-				'top':settings.height-50,
+				'top':settings.height-37,
 				'width':settings.width-18,
 				'height':25
 			});
