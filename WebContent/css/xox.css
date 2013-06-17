@@ -372,11 +372,32 @@ position: relative;
 .xox_middle2{
 	width:1000px;
 	margin:0 auto;
-	/**
-	padding:2px 0px 2px 3px;
-	width:915px;
-	height:450px;
-	*/
+}
+.xox_middle1_head a:hover {
+	color: #c00;
+	text-decoration: underline;
+}
+.xox_middle1_head_2 a:hover {
+	color: #c00;
+	text-decoration: underline;
+}
+.xox_middle1_head .more{
+	height:51px;
+	display:block;
+	float: right;
+	line-height:51px;
+	padding-right: 10px;
+	font-family: "宋体","Arial Narrow",sans-serif;
+	font-size: 12px;
+}
+.xox_middle1_head_2 .more{
+	height:51px;
+	display:block;
+	float: right;
+	line-height:51px;
+	padding-right: 10px;
+	font-family: "宋体","Arial Narrow",sans-serif;
+	font-size: 12px;
 }
 .xox_middle2_sd_left{
 	width: 197px;
