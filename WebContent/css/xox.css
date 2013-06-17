@@ -112,15 +112,17 @@ body{
 	filter: Alpha(Opacity=0);
 	z-index: -1;
 }
-.bottomer-div{
-	width: 600px;
-	overflow: hidden;
-}
-.xox_middle .bottomer .current{
+.xox_middle .bottomer-current{
+	width:600px;
+	height:205px;
+	margin:15px 0px 0px 0px;
 	filter: Alpha(Opacity=100);
     position: absolute; 
     z-index: 0; 
-    zoom: 1;
+}
+.bottomer-div{
+	width: 600px;
+	overflow: hidden;
 }
 .bottomer-smalldiv{
 	font: 12px/20px arial, helvetica, verdana, tahoma, sans-serif;

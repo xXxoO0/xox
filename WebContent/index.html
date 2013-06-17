@@ -90,7 +90,7 @@
 			 <a href="#" >小标题</a>
 			 </div>
 			 <div class="clear-5"></div>
-			 <div class="bottomer current" >
+			 <div name="bottomers" class="bottomer-current">
 			 <div class="bottomer-div" >
 				 <div class="bottomer-smalldiv">
 					 <div class="items">
@@ -185,7 +185,7 @@
 			 </div>
 			 </div>
 			  <!-- bottomer结束 -->
-			 <div class="bottomer">
+			 <div name="bottomers" class="bottomer">
 				 <div class="bottomer-div" >
 					 <div class="bottomer-smalldiv">
 						 <div class="items">
@@ -478,20 +478,21 @@ $(document).ready(function($) {
   });
   $("#switch-ul").find("li").on("mouseover",function(){
 		var index = $(this).attr("id");
-		$(".bottomer").each(function(num){
-			$(this).removeClass("current");
+		$("div[name='bottomers']").each(function(num){
+			$(this).removeClass("bottomer-current");
+			$(this).removeClass("bottomer");
 			if(num+1==index){
-				$(this).addClass("current");
+				$(this).addClass("bottomer-current");
+			}else{
+				$(this).addClass("bottomer");
 			}
 		});
-		
 		$("#switch-ul").find("li").each(function(){
 			$(this).removeClass("current");
 		});
 		$(this).addClass("current");
 	});
   $(".xox_middle1 img").on("hover",function(){
-	  
 	  $(this).css({
 		  'width': $(this).width()-6,
 		  'height':$(this).height()-6
