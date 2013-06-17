@@ -859,7 +859,6 @@ odd - #edf5ff (light blue)
 }
 
 .xox-r-r {
-	letter-spacing: -0.31em;
 	*letter-spacing: normal;
 	word-spacing: -0.43em;
 }
@@ -868,9 +867,6 @@ odd - #edf5ff (light blue)
 	word-spacing: -0.43em;
 }
 
-.xox-r-r img {
-	max-width: 100%;
-}
 
 @media ( min-width :900px) {
 	.xox-visible-phone {
