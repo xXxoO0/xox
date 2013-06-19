@@ -1,0 +1,170 @@
+.login-container{
+	margin:0 auto;
+	width:920px;
+	padding-top:50px;
+	position: relative;
+}
+.bgAdv {
+	height: 500px;
+	background: url(/image/ad/bg-adv.jpg) no-repeat;
+	margin: 28px auto 0;
+	overflow: hidden;
+}
+#passport {
+	width: 405px;
+	height: 400px;
+	border: 1px solid #ceced1;
+	position: absolute;
+	top: 66px;
+	left: 22px;
+	background: #fcfcfc;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+}
+#passport .title {
+	height: 48px;
+	background: #0285BD;
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 0 0 20px;
+	padding-top: 18px;
+	vertical-align: middle;
+}
+#passport .title  h2{
+	color: #FFF;
+	font-weight: 500;
+	font-size: 2em;
+	padding: 0;
+	margin: 0;
+}
+.login-container  .corner {
+	background: url(/image/bg/xox-log-corner.png) no-repeat 0 0;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 66px;
+	left: 429px;
+}
+#passport ul .loginname, #passport ul .password {
+	height: 80px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#passport  form{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+#passport .signinTitle {
+	padding: 0;
+	height: 5px;
+	margin: 5px 0 -10px 25px;
+}
+#passport .regTips {
+	width: 325px;
+	background: #FFF;
+	border: 1px solid #EFE9A4;
+	color: #BB0000;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0;
+	padding: 4px;
+	text-align: left;
+	visibility: hidden;
+	display: block;
+}
+#passport .inputBox {
+	padding: 0 0 30px 0;
+	margin: 37px 25px 0 28px;
+}
+#passport  li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+#passport  .inputBox li label {
+	display: block;
+	color: #555;
+	font-size: 1.2em;
+	margin-bottom: 3px;
+	font: normal 400 1.2em/1.8 tahoma,"宋体";
+}
+#passport  .inputBox li input {
+	height: 34px;
+	width: 335px;
+	background: #f3f3f3;
+	border: none;
+	box-shadow: 2px 2px 2px #CCCCCC inset;
+	line-height: 34px 9;
+}
+#passport  .tip {
+	margin: -10px 0 30px;
+	height: 20px;
+	font-size: 1em;
+}
+#passport  .clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#passport  .inputBox #chechbox input {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}
+#passport   input[type="checkbox"] {
+	float:left;
+	margin-top:6px;
+}
+#passport  .tip span {
+	float: left;
+	display: block;
+	width: 50px;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	line-height:30px;
+}
+#passport #submitbutton {
+	float: left;
+	height: 35px;
+	width: 85px;
+	background: #0285BD;
+	border: none;
+	color: #FFF;
+	box-shadow: none;
+	letter-spacing: 5px;
+	font-family: '微软雅黑';
+	cursor: pointer;
+	font: -webkit-small-control;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+}
+#passport  .tip a {
+	text-decoration: none;
+	color: #ab1417;
+	padding: 0;
+	margin: 0;
+}
+#passport .tip .forget{
+	width:50px;
+}
+#passport .tip .newreg{
+	width:80px;
+}
+#passport .tip .agree{
+	color: #ab1417;
+	width:250px;
+}
+#passport .tip .forget  a{
+	color:#0285BD;
+}
+#passport .newreg a{
+	color:#0285BD;
+}

@@ -177,11 +177,6 @@ position: relative;
 	top: 62px;
 	overflow: hidden;
 }
-.bottomer-smalldiv .items .p .p_ishd .ico__SD {
-	display: block;
-	height: 14px;
-	line-height: 14px;
-}
 .bottomer-smalldiv .items  .p .p_status .bg {
 	z-index: -1;
 	position: absolute;
@@ -382,6 +377,7 @@ position: relative;
 	text-decoration: underline;
 }
 .xox_middle1_head .more{
+	color:#999999;
 	height:51px;
 	display:block;
 	float: right;
@@ -391,6 +387,7 @@ position: relative;
 	font-size: 12px;
 }
 .xox_middle1_head_2 .more{
+	color:#999999;
 	height:51px;
 	display:block;
 	float: right;
@@ -544,8 +541,8 @@ user agent stylesheethr {
 	font-size: 12px;
 	line-height: 2.2;
 	white-space: nowrap;
-	border-bottom: 1px dotted #ddd;
 	clear:both;
+	border-bottom: 1px dotted #ddd;
 }
 #right_bottom ul li span{
 	float:right;
@@ -786,6 +783,10 @@ user agent stylesheethr {
     margin-top:10px;
     margin-left:5px;
 }
+#regbtn{
+    margin-top:10px;
+    margin-left:5px;
+}
 
 .div-header{
 	margin: 0;
@@ -889,6 +890,7 @@ user agent stylesheethr {
 	padding: 20px 0;
 	color: #999;
 	text-align: center;
+	font: 12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
 }
 #footer .container{
 	width: 910px;
@@ -897,6 +899,9 @@ user agent stylesheethr {
 #footer .container  a{
 	color: #999;
 	outline: none;
+}
+#linker .container {
+	font: 12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
 }
 #xox-slide{
 	display: block;
@@ -916,3 +921,97 @@ user agent stylesheethr {
 	_top: expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight-20);
 }
 
+#open_login_div {
+	overflow: visible;
+	font-family: arial,simsun,helvetica,sans-serif;
+	font-size: 12px;
+	color: #333;
+}
+#open_login_div .login {
+	width: 360px;
+	padding: 5px 0 0 30px;
+}
+#open_login_div .loginForm2 {
+	width: 360px;
+	top: 24px;
+	left: 20px;
+	position: relative;
+	display: block;
+}
+#open_login_div  .u-ipt {
+	font-size: 14px;
+	margin-bottom: 24px;
+	color: #444444;
+	line-height: 33px;
+}
+.f-fl {
+	float: left;
+}
+
+.f-cb{
+		zoom: 1;
+}
+.f-cb:after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+#open_login_div  .autoLogin {
+	margin-bottom: 14px;
+	color: #333333;
+	padding-left: 70px;
+}
+#open_login_div .autoLogin .d1 {
+	margin-right: 5px;
+}
+#open_login_div  label{
+	cursor: default;
+}
+#open_login_div a {
+	color: #049339;
+}
+#open_login_div input{
+	padding: 4px 10px;
+	border: 1px solid #999;
+	font-size: 15px;
+	vertical-align: middle;
+}
+#open_login_div input[type="checkbox"] {
+-webkit-appearance: checkbox;
+box-sizing: border-box;
+}
+#open_login_div  .fCenter {
+	padding-left: 70px;
+}
+#open_login_div .loginBtn {
+	display: block;
+	background: url(../image/bg/login-btn.png) no-repeat;
+	border: none;
+	width: 73px;
+	height: 32px;
+}
+.fCenter a {
+	display: block;
+	float: left;
+	line-height: 33px;
+}
+#open_login_div .error-tip{
+	height: 5px;
+	margin: 5px 10px 0px 25px;
+}
+#open_login_div .error-tip span{
+	display: block;
+	visibility: visible;
+	width: 230px;
+	background: #FFF;
+	border: 1px solid #EFE9A4;
+	color: #BB0000;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0;
+	margin-left: 20px;
+	padding: 4px;
+	text-align: left;
+}
