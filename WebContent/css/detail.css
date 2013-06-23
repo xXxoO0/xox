@@ -1,0 +1,81 @@
+.detail-container{
+	margin:0 auto;
+	width:920px;
+	padding-top:5px;
+	position: relative;
+}
+#detial-left #imgDiv{
+	padding-top:10px;
+	padding-bottom:10px;
+	width:610px;
+	padding-left:5px;
+}
+#detial-left #imgDiv img{
+	display:block;
+	width:590px;
+	margin:0 auto;
+	margin-left:5px;
+}
+#detial-left{
+   border-color:#ddd;
+   border-style:solid;
+   border-width:1px;
+   background-color:rgb(255,255,255);
+   margin-top:6px;
+   margin-left:5px;
+   width:610px;
+   margin-right:23px;
+}
+#detial-left .img-title{
+	display:block;
+	width:615px;
+	padding-top:5px;
+	margin:0 auto;
+	height:60px;
+	margin-left:5px;
+}
+#detial-left .img-title h2{
+	display: block;
+	padding-left: 12px;
+	font-size: 14px;
+}
+#detial-left .img-title p{
+	display: block;
+	padding-left: 12px;
+	font-size: 14px;
+	color: #666;
+}
+#detial-left .img-title .metaLeft{
+	float: right;
+	margin: -45px 15px 0 0;
+}
+#detial-left .img-title .metaLeft .day {
+	font-family: "微软雅黑";
+	letter-spacing: 0.1em;
+	color: #333333;
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 36px;
+}
+#detial-left .img-title .metaLeft .month_Year {
+	color: #999999;
+	font: bold 10px/10px Arial, Helvetica, sans-serif;
+	padding-left: 3px;
+}
+.pagebar-pre{
+	clear:both;
+	margin:0 auto;
+	background-color:rgb(255,255,255);
+}
+#pagebar{
+	clear:both;
+}
+#pagebar ul{
+	
+}
+#pagebar .pure-button{
+	background-color:rgb(255,255,255);
+}
+#pagebar .pure-button-selected{
+	color:red;
+}

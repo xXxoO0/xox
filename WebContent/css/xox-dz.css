@@ -927,3 +927,6 @@ odd - #edf5ff (light blue)
 		display: none;
 	}
 }
+.pure-skin-xox .pure-paginator li {
+	margin:0;
+}
