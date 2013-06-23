@@ -739,6 +739,9 @@ user agent stylesheethr {
 	height: 31px;
 	width: 61px;
 }
+#menubar .xox-nav .current {
+  background: url(../image/bg/xox-sp-header.png) no-repeat 0 -40px;
+}
 #menubar  li a{
     color: #fff;
 	display: block;
@@ -751,15 +754,14 @@ user agent stylesheethr {
 	margin-left: 9px;
 	margin-right: 9px;
 }
-#menubar .current{
-	background: url(../image/bg/xox-sp-header.png) no-repeat 0 -40px;
-}
+
 #menucontainer{
 	width: 100%;
 	min-width: 910px;
-	height: 42px;
+	height: 41px;
 	z-index: 100;
 	background: url(../image/bg/xox-header.jpg) repeat-x center center;
+	background-position: 41px 0px;
 	position: fixed;
 	top:0;
 	left:0;
@@ -807,7 +809,27 @@ user agent stylesheethr {
   border-width:1px;
   background-color:rgb(255,255,255);
 }
-
+#logindiv  .xox-button {
+	font-size: 100%;
+	padding: 0.5em 1.5em 0.5em;
+	color: #163137;
+	border: none rgba(0, 0, 0, 0);
+	background-color: #c5e2e8;
+	border-radius: 2px;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: 0.1s linear -webkit-box-shadow;
+	display: inline-block;
+	zoom: 1;
+	line-height: normal;
+	white-space: nowrap;
+	vertical-align: baseline;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	box-sizing: border-box;
+}
 .pure-button-success,
 .pure-button-error,
 .pure-button-warning,
@@ -832,7 +854,8 @@ user agent stylesheethr {
     margin-top:10px;
     margin-left:5px;
 }
-#regbtn{
+#logindiv  #regbtn{
+	background: orange;
     margin-top:10px;
     margin-left:5px;
 }
@@ -970,8 +993,6 @@ user agent stylesheethr {
 	height: 40px;
 	background: url(../image/bg/xox-slider.png) -40px 0 no-repeat;
 	z-index: 999;
-	_position: absolute;
-	_top: expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight-20);
 }
 
 #open_login_div {
@@ -996,6 +1017,9 @@ user agent stylesheethr {
 	margin-bottom: 24px;
 	color: #444444;
 	line-height: 33px;
+}
+#open_login_div  .text {
+	width:210px;
 }
 .f-fl {
 	float: left;
@@ -1032,8 +1056,9 @@ user agent stylesheethr {
 	vertical-align: middle;
 }
 #open_login_div input[type="checkbox"] {
--webkit-appearance: checkbox;
-box-sizing: border-box;
+	-webkit-appearance: checkbox;
+	box-sizing: border-box;
+	border:none;
 }
 #open_login_div  .fCenter {
 	padding-left: 70px;
@@ -1057,7 +1082,7 @@ box-sizing: border-box;
 #open_login_div .error-tip span{
 	display: block;
 	visibility: visible;
-	width: 230px;
+	width: 260px;
 	background: #FFF;
 	border: 1px solid #EFE9A4;
 	color: #BB0000;

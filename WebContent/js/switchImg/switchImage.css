@@ -126,3 +126,102 @@
    font-size: 0;
    background: url(img_p_on.png) no-repeat 0 0;
 }
+
+/**
+轮播2样式
+*/
+.img-show1{
+	overflow: hidden;
+	padding:5px 5px 5px 5px;
+	margin:0 0 0 0;
+	position:relative;
+	background-attachment:scroll;
+	background-origin:padding-box;
+	background-clip:border-box;
+}
+.img-show-ol1{
+	overflow:hidden;
+	margin:0 0 0 0;
+	padding:3px 3px 3px 3px;
+	background-attachment:scroll;
+	background-repeat:repeat;
+	background-size:auto;
+	background-origin:padding-box;
+	background-clip:border-box;
+}
+.img-show-li1{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+    list-style-type:none;
+    list-style-position:outside;
+    list-style-image:none;
+    overflow:hidden;
+}
+.img-li-current1{
+    filter: Alpha(Opacity=100);
+    position: absolute; 
+    z-index: 2; 
+    zoom: 1;
+}
+.img-li-normal1{
+    filter: Alpha(Opacity=0);
+    position: absolute; 
+    z-index: 1; 
+    zoom: 1;
+}
+.ogprev{
+	display: block;
+	left: 30px;
+	background: url(xox-sprite.png) no-repeat 9999px 9999px;
+	background-position: -185px -355px;
+	width: 30px;
+	height: 50px;
+	position: absolute;
+	top: 190px;
+}
+.ognext{
+	right: 30px;
+	background: url(xox-sprite.png) no-repeat 9999px 9999px;
+	background-position: -240px -358px;
+	width: 30px;
+	height: 50px;
+	position: absolute;
+	top: 190px;
+	display: block;
+}
+a.ocprev:hover, a.ogprev:hover {
+	background-position: -185px -420px;
+}
+a.ocnext:hover, a.ognext:hover {
+	background-position: -240px -420px;
+}
+.switch-pagination{
+	margin: 0px auto 0px auto;
+	padding-top: 12px;
+	width: 200px;
+	height: 16px;
+	display:block;
+	clear:both;
+	height:50px;
+}
+.switch-pagination li {
+	float: left;
+	margin: 0px 1px;
+	list-style: none;
+}
+.switch-pagination li a {
+	float: left;
+	display: inline-block;
+	zoom: 1;
+	width: 20px;
+	height: 8px;
+	margin: -2px 3px;
+	border: 1px solid #999;
+	background: none;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+.switch-pagination li.current a {
+	border: 1px solid #19B961;
+	background: #197442;
+}

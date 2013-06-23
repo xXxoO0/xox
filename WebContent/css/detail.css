@@ -65,7 +65,6 @@
 .pagebar-pre{
 	clear:both;
 	margin:0 auto;
-	background-color:rgb(255,255,255);
 }
 #pagebar{
 	clear:both;
@@ -74,7 +73,7 @@
 	
 }
 #pagebar .pure-button{
-	background-color:rgb(255,255,255);
+	background-color:rgb(244,244,244);
 }
 #pagebar .pure-button-selected{
 	color:red;

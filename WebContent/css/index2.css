@@ -1,0 +1,140 @@
+#bigImg{
+	width:100%;
+	background-color:#333;
+	padding-top:41px;
+}
+#switchImg2{
+   width:905px;
+   height:400px;
+   margin:0 auto;
+   padding:2px 0px 2px 3px;
+}
+#index2-container{
+	padding-top:10px;
+	margin:0 auto;
+	width:920px;
+}
+.index2-main{
+	margin-top:0px;
+	clear:both;
+	width:600px;
+	font: 12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
+}
+.index2-main dl.feed-item {
+	overflow: auto;
+}
+.line {
+	background: transparent url(../image/bg/xox-bg-line.gif) repeat-x 0 bottom;
+	position: relative;
+}
+.index2-main dl.feed-item dt.avatar {
+	float: left;
+	padding: 3px 0 0;
+}
+.index2-main dt {
+	font-weight: bold;
+	font-size: 14px;
+	color: #333;
+	padding-bottom: 5px;
+}
+.index2-main dl, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+.index2-main dt {
+	display: block;
+}
+.index2-main a.user30 {
+	background: transparent url(../image/bg/xox-base.png) scroll no-repeat -131px 0;
+	width: 36px;
+	height: 36px;
+}
+.index2-main a.user30, a.user60, a.user100, a.user200 {
+	display: block;
+	float: left;
+	position: relative;
+}
+.index2-main a.user30 img {
+	width: 30px;
+	height: 30px;
+	margin: 3px 0 0 2px;
+}
+.index2-main a.user30 img, a.user60 img, a.user100 img, a.user200 img {
+	display: block;
+	border: 0;
+}
+.index2-main dl.feed-item dd.box {
+	padding-left: 40px;
+}
+.index2-main dl.feed-item dd {
+	padding: 0 0 10px 0;
+}
+.index2-main dd {
+	padding: 10px 0;
+}
+.index2-main dl.feed-item div.from {
+	padding-left: 2px;
+}
+.index2-main dl.feed-item div.from a {
+	color: #369;
+}
+.index2-main a.username {
+	color: #369;
+	white-space: nowrap;
+	font-size: 12px;
+}
+.index2-main  input, button, a {
+	outline: none;
+}
+.index2-main span.time, span.gray {
+	color: #999;
+}
+.index2-main dl.feed-item h3, div.site-item h3, div.page-item h3 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	padding: 4px 0;
+	font-weight: normal;
+	margin: 0;
+	display: block;
+}
+.index2-main dl.feed-item h3 a {
+	color: #369;
+}
+.index2-main dl.feed-item div.thumb {
+	background: #f8f8f8;
+	border-radius: 3px;
+	padding: 5px;
+	float: left;
+	position: relative;
+}
+.index2-main .index2-main-img {
+	background: #FFF;
+	border: 1px solid #CBCECF;
+	padding: 5px;
+	display: block;
+	width:520px;
+}
+.index2-main .splited{
+	width:600px;
+	height:20px;
+	margin-bottom:10px;
+}
+#feedMore:hover {
+	background: #ececec;
+	text-decoration: none;
+}
+#feedMore {
+	display: block;
+	padding: 5px 0;
+	text-align: center;
+	font-size: 14px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #999;
+	background: #fff;
+}
+#index2-div{
+	
+}

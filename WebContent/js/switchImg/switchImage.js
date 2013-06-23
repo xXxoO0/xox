@@ -120,4 +120,124 @@
 		}
 		init();
 	};
+	//图片轮播的另一种样式（大屏幕）
+	$.fn.switchImage1 = function(initsettings){
+		var defaultsetting = {
+				'width':905,
+		        'height':400,
+		        'changeTime' : 5
+		};
+		var settings = $.extend({},defaultsetting,initsettings);
+		var $container = this;
+		var $indexShow = $container.find("#index_show");
+		var $imgBottom = $container.find("#imgBottom");
+		var $indexShowOl = $indexShow.find("ol");
+		var $indexShowLi = $indexShowOl.find("li");
+		var $indexShowLi = $indexShowLi.find("a");
+		//用于计算index的参数
+		var num=1;
+		var init = function(){
+			css_init();
+			img_init();
+		};
+		var css_init = function(){
+			$container.addClass("img-box");
+			$container.css({
+				'height':settings.height,
+				'width':settings.width
+			});
+			$indexShow.addClass("img-show1");
+			$indexShow.css({
+				'height':settings.height-10,
+				'width':settings.width-10
+			});
+			$indexShowOl.addClass("img-show-ol1");
+			$indexShowOl.css({
+				'height':settings.height-38,
+				'width':settings.width-18
+			});
+			//处理每个
+			$indexShowOl.find("li").each(function(){
+				$(this).addClass("img-show-li1");
+				$(this).css({
+					'height':settings.height-38,
+					'width':settings.width-18
+				});
+				var showA = $(this).find("a");
+				showA.addClass("img-show-a");
+				var showImg = showA.find("img");
+				showImg.addClass("img-show-img");
+				showImg.css({
+					'height':settings.height-18,
+					'width':settings.width-18
+				});
+			});
+			$imgBottom.addClass("img-show-bt");
+			$imgBottom.css({
+				'top':settings.height-settings.bgheight-9,
+				'height':settings.bgheight,
+				'width':settings.bgwidth
+			});
+			$(".img_bt_ul").css({
+				'top':settings.height-37,
+				'width':settings.width-18,
+				'height':25
+			});
+		};
+		var changeP = function(){
+			num = this.id.split("_")[1];
+			changeImg(num);
+		}
+		var img_init = function(){
+			//底部小方框变化添加时间
+			$(".switch-pagination").find("a").each(function(i){
+				$(this).attr("id","p_"+(i+1));
+				$(this).bind("click",changeP);
+			});
+			//左右按钮事件添加
+			$(".ogprev").on("click",function(){
+				num=num-1;
+				if(num<1){
+					num=$indexShowOl.find("li").length;
+				}
+				changeImg(num);
+			});
+			$(".ognext").on("click",function(){
+				num=num+1;
+				if(num>$indexShowOl.find("li").length){
+					num=1;
+				}
+				changeImg(num);
+			});
+			//开始轮播
+			window.setInterval(function(){
+				changeImg(num);
+				num++;
+				if(num>$indexShowOl.find("li").length){
+					num=1;
+				}
+            },settings.changeTime*1000);
+		};
+		var changeImg = function(num){
+			//图片变化
+			$indexShowOl.find("li").each(function(i){
+				$(this).removeClass("img-li-normal1");
+				$(this).removeClass("img-li-current1");
+				if(i+1==num){
+					$(this).addClass("img-li-current");
+				}else{
+					$(this).addClass("img-li-normal1");
+				}
+			});
+			//底部左侧文字变化
+			$(".switch-pagination").find("li").each(function(i){
+				$(this).removeClass("current");
+				if(i+1==num){
+					$(this).addClass("current");
+				}else{
+				}
+			});
+		}
+		init();
+	};
 })(jQuery);
